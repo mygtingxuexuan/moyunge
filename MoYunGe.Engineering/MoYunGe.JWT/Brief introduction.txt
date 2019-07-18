@@ -1,0 +1,95 @@
+﻿Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（(RFC 7519).该token被设计为紧凑且安全的，特别适用于分布式站点的单点登录（SSO）场景。JWT的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该token也可直接被用于认证，也可被加密。
+简单来说就是 JWT(Json Web Token)是实现token技术的一种解决方案
+
+为什么使用JWT
+token验证和session认证的区别
+
+传统的session认证
+
+http协议本身是一种无状态的协议，而这就意味着如果用户向我们的应用提供了用户名和密码来进行用户认证，那么下一次请求时，用户还要再一次进行用户认证才行，因为根据http协议，我们并不能知道是哪个用户发出的请求，所以为了让我们的应用能识别是哪个用户发出的请求，我们只能在服务器存储一份用户登录的信息，这份登录信息会在响应时传递给浏览器，告诉其保存为cookie,以便下次请求时发送给我们的应用，这样我们的应用就能识别请求来自哪个用户了,这就是传统的基于session认证。
+
+session缺点
+
+基于session的认证使应用本身很难得到扩展，随着不同客户端用户的增加，独立的服务器已无法承载更多的用户
+
+Session方式存储用户id的最大弊病在于要占用大量服务器内存，对于较大型应用而言可能还要保存许多的状态。
+
+基于session认证暴露的问题
+
+Session需要在服务器保存，暂用资源
+扩展性 session认证保存在内存中 ，无法扩展到其他机器中
+CSRF 基于cookie来进行用户识别的, cookie如果被截获，用户就会很容易受到跨站请求伪造的攻击。
+基于token的鉴权机制
+基于token的鉴权机制类似于http协议也是无状态的，它不需要在服务端去保留用户的认证信息或者会话信息。这就意味着基于token认证机制的应用不需要去考虑用户在哪一台服务器登录了，这就为应用的扩展提供了便利。
+
+JWT方式将用户状态分散到了客户端中，可以明显减轻服务端的内存压力。除了用户id之外，还可以存储其他的和用户相关的信息，例如用户角色，用户性别等。
+
+请求流程
+
+1.用户使用用户名密码来请求服务器
+2.服务器进行验证用户的信息
+3.服务器通过验证发送给用户一个token
+4.客户端存储token，并在每次请求时附送上这个token值
+5.服务端验证token值，并返回数据
+这个token必须要在每次请求时传递给服务端，它应该保存在请求头里， 另外，服务端要支持 CORS(跨来源资源共享)策略，一般我们在服务端这么做就可以了 Access-Control-Allow-Origin: *。
+
+JWT的结构
+一个JWT是下面的结构
+
+加密后jwt信息如下所示，是由.分割的三部分组成，分别为Header、Payload、Signature
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.
+TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+JWT 的组成
+
+Head -主要包含两个部分,alg指加密类型，可选值为HS256、RSA等等，typ=JWT为固定值，表示token的类型
+
+Header:
+{
+ "alg": "HS256",
+ "typ": "JWT"
+}
+Payload - Payload又被称为Claims包含您想要签署的任何信息
+
+Claims:
+{
+ "sub": "1234567890",
+ "name": "John Doe",
+ "admin": true
+}
+JWT Payload的组成
+
+Payload通常由三个部分组成，分别是 Registered Claims ; Public Claims ; Private Claims ;每个声明，都有各自的字段。
+
+Registered Claims
+
+iss 【issuer】发布者的url地址
+
+sub 【subject】该JWT所面向的用户，用于处理特定应用，不是常用的字段
+
+aud 【audience】接受者的url地址
+
+exp 【expiration】 该jwt销毁的时间；unix时间戳
+
+nbf 【not before】 该jwt的使用时间不能早于该时间；unix时间戳
+
+iat 【issued at】 该jwt的发布时间；unix 时间戳
+
+jti 【JWT ID】 该jwt的唯一ID编号
+
+Signature 对 则为对Header、Payload的签名
+
+Signature:
+base64UrlEncode(Header) + "." + base64UrlEncode(Claims)
+头部、声明、签名用 . 号连在一起就得到了我们要的JWT 也就是夏明这种类型的字符串
+
+eyJhbGciOiJIUzI1NiJ9.
+
+eyJleHAiOjE1MTUyOTgxNDEsImtleSI6InZhdWxlIn0.
+
+orewTmil7YmIXKILHwFnw3Bq1Ox4maXEzp0NC5LRaFQ
+
+其实这些事一行的，我只是让看的更直白点将其割开了。
+
+相关链接 详情：https://www.cnblogs.com/wangshouchang/p/9551748.html
