@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace MoYunGe.MVC5.Open
+namespace MoYunGe.Tests.MVC5.Open
 {
     public class MvcApplication : System.Web.HttpApplication
     {

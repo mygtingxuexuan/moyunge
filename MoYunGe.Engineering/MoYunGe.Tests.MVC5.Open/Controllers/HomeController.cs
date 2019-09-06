@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace MoYunGe.MVC5.Open.Controllers
+namespace MoYunGe.Tests.MVC5.Open.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace MoYunGe.MVC5.Open
+namespace MoYunGe.Tests.MVC5.Open
 {
     public class BundleConfig
     {

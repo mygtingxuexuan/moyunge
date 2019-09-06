@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息是通过以下项进行控制的
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("MoYunGe.MVC5.Open")]
+[assembly: AssemblyTitle("MoYunGe.Tests.MVC5.Open")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MoYunGe.MVC5.Open")]
+[assembly: AssemblyProduct("MoYunGe.Tests.MVC5.Open")]
 [assembly: AssemblyCopyright("版权所有(C)  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
-[assembly: Guid("241e63b2-56af-410f-a226-affd456aa5ea")]
+[assembly: Guid("ca686ec4-8dad-477b-ab4b-09c6aad72307")]
 
 // 程序集的版本信息由下列四个值组成:
 //
