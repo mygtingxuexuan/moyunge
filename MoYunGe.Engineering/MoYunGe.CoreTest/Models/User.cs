@@ -8,6 +8,10 @@ namespace MoYunGe.CoreTest.Models
     public class User:Base
     {
         /// <summary>
+        /// 账号编号
+        /// </summary>
+        public string AccountId { get; set; }
+        /// <summary>
         /// 姓名
         /// </summary>
         public string Name { get; set; }
@@ -43,5 +47,13 @@ namespace MoYunGe.CoreTest.Models
         /// 臀围
         /// </summary>
         public double Hipline { get; set; }
+        /// <summary>
+        /// 地址
+        /// </summary>
+        public string Address { get; set; }
+        /// <summary>
+        /// 籍贯
+        /// </summary>
+        public string NativePlace { get; set; }
     }
 }
