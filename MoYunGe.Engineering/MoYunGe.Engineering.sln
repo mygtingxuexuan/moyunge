@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoYunGe.CoreTest", "MoYunGe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorPagesMovie", "RazorPagesMovie\RazorPagesMovie.csproj", "{0BB86E9C-6CB3-4B41-A154-F1F314F41981}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{6094D9D7-248A-4578-8560-F052F5B4C270}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{0BB86E9C-6CB3-4B41-A154-F1F314F41981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BB86E9C-6CB3-4B41-A154-F1F314F41981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BB86E9C-6CB3-4B41-A154-F1F314F41981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6094D9D7-248A-4578-8560-F052F5B4C270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6094D9D7-248A-4578-8560-F052F5B4C270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6094D9D7-248A-4578-8560-F052F5B4C270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6094D9D7-248A-4578-8560-F052F5B4C270}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{1807CDB7-F08A-450B-BBBC-88B139A216E5} = {D1E39248-4395-44F5-8304-0314480FBEE8}
 		{A158C113-E728-4280-BC1E-B079ACF9BF08} = {B906E0BF-979F-4BC0-BB22-0B223EA38664}
 		{0BB86E9C-6CB3-4B41-A154-F1F314F41981} = {B906E0BF-979F-4BC0-BB22-0B223EA38664}
+		{6094D9D7-248A-4578-8560-F052F5B4C270} = {B906E0BF-979F-4BC0-BB22-0B223EA38664}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {73436B55-11A6-4AD9-A845-7BE03746CACF}
